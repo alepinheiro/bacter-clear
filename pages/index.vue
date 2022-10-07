@@ -49,7 +49,7 @@ const services = useServices()
                 </h2>
                 <div class="w-full max-w-4xl" id="cards">
                     <ClientOnly>
-                        <Swiper class="h-full" :space-between="20" :slides-per-view="3" :loop="true" :auto-height="false"
+                        <Swiper class="h-full" :space-between="20" :loop="true" :auto-height="false"
                         :breakpoints="{
                             // when window width is >= 480px
                             480: {
@@ -57,7 +57,7 @@ const services = useServices()
                             spaceBetween: 30
                             },
                             // when window width is >= 640px
-                            640: {
+                            768: {
                             slidesPerView: 3,
                             spaceBetween: 40
                             }}"

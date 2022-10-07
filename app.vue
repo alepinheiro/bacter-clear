@@ -17,7 +17,7 @@
             </label>
             <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
               <li>
-                <NuxtLink to="/servicos">
+                <NuxtLink to="/servicos/">
                   Serviços
                 </NuxtLink>
               </li>
@@ -30,7 +30,7 @@
         <div class="navbar-end hidden md:flex">
           <ul class="menu menu-horizontal p-0">
             <li>
-              <NuxtLink to="/servicos">
+              <NuxtLink to="/servicos/">
                 Serviços
               </NuxtLink>
             </li>

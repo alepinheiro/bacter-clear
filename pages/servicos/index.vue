@@ -1,5 +1,10 @@
 <script setup lang="ts">
-const services = useServices()
+    const route = useRoute()
+    console.log(route.path)
+    if (route.path === '/servicos'){
+        await navigateTo({path: '/servicos/'})
+    }
+    const services = useServices()
 </script>
 <template>
     <section class="bg-zinc-300 py-10">
@@ -13,7 +18,7 @@ const services = useServices()
                                 <img :src='item.imageURL' width="300" height="200" class="rounded-md object-cover w-full" alt='' />
                                 <h3>{{item.title}}</h3>
                                 <p>{{item.intro}}</p>
-                                <NuxtLink :to="`servicos/${item.link}`" class="btn btn-primary">
+                                <NuxtLink :to="`${item.link}`" class="btn btn-primary">
                                     Ver mais
                                 </NuxtLink>
                     </div>

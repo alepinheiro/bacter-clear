@@ -1,15 +1,16 @@
 <script setup lang="ts">
-
+import VueScrollTo from 'vue-scrollto'
 const services = useServices()
 const route = useRoute()
 
 const service = services.find(el => el.link == route.params.id)
 
-    window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
+
+onMounted(() => {
+    VueScrollTo.scrollTo('#__nuxt', 300, {
+        offset: 0,
     })
+})
 </script>
 <template>
     <section class="w-full max-w-6xl py-10 mx-auto">
@@ -27,7 +28,7 @@ const service = services.find(el => el.link == route.params.id)
                     <img :src="service.imageURL" alt="" class="w-full rounded-md">
                 </div>
             </div>
-            <div class="bg-zinc-300">
+            <div class="bg-zinc-200">
                 <div class="w-full border-2 border-primary rounded-lg p-5 flex flex-col items-center text-center flex-1 gap-4 shadow-lg">
                     <h1>Fale com um especialista</h1>
                     <p>Que tal agendar agora mesmo um bate papo com o nosso time?</p>
@@ -35,15 +36,15 @@ const service = services.find(el => el.link == route.params.id)
 
                         <label class="input-group">
                             <span class="w-32">Nome</span>
-                            <input type="text" placeholder="Digite seu nome" class="input input-bordered flex-1" />
+                            <input type="text" placeholder="Digite seu nome" class="input input-bordered flex-1 w-full" />
                         </label>
                         <label class="input-group">
                             <span class="w-32">Email</span>
-                            <input type="text" placeholder="Digite seu email" class="input input-bordered flex-1" />
+                            <input type="text" placeholder="Digite seu email" class="input input-bordered flex-1 w-full" />
                         </label>
                         <label class="input-group">
                             <span class="w-32">Telefone</span>
-                            <input type="text" placeholder="Digite seu telefone" class="input input-bordered flex-1" />
+                            <input type="text" placeholder="Digite seu telefone" class="input input-bordered flex-1 w-full" />
                         </label>
                         <button class="btn btn-primary">
                             Solicitar contato
