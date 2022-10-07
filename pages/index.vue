@@ -34,16 +34,16 @@ const services = useServices()
                         style="backdrop-filter: blur(20px);">
                         <h1>Serviços de controle de pragas, higienização e sanitização</h1>
                         <p>Atuando em toda Grande Florianópolis e Região</p>
-                        <button class="btn btn-primary">solicitar orçamento</button>
+                        <button class="btn btn-primary ">solicitar orçamento</button>
                     </div>
 
                 </div>
 
             </div>
         </section>
-        <section class="bg-zinc-300 pt-56 pb-10 md:pt-20">
-            <div class="max-w-6xl mx-auto flex flex-col items-center gap-5">
-                <h2 class="text-center">
+        <section class="bg-zinc-100 pt-56 pb-10 md:pt-20">
+            <div class="max-w-6xl mx-auto flex flex-col items-center gap-5 ">
+                <h2 class="text-center px-5">
                     Especialistas em <br>
                     controle de pragas e desinfecção
                 </h2>
@@ -92,15 +92,15 @@ const services = useServices()
 
                         <label class="input-group">
                             <span class="w-32">Nome</span>
-                            <input type="text" placeholder="Digite seu nome" class="input input-bordered flex-1" />
+                            <input type="text" placeholder="Digite seu nome" class="input input-bordered flex-1 w-full" />
                         </label>
                         <label class="input-group">
                             <span class="w-32">Email</span>
-                            <input type="text" placeholder="Digite seu email" class="input input-bordered flex-1" />
+                            <input type="text" placeholder="Digite seu email" class="input input-bordered flex-1 w-full" />
                         </label>
                         <label class="input-group">
                             <span class="w-32">Telefone</span>
-                            <input type="text" placeholder="Digite seu telefone" class="input input-bordered flex-1" />
+                            <input type="text" placeholder="Digite seu telefone" class="input input-bordered flex-1 w-full" />
                         </label>
                         <button class="btn btn-primary">
                             Solicitar contato

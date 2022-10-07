@@ -7,7 +7,7 @@
     const services = useServices()
 </script>
 <template>
-    <section class="bg-zinc-300 py-10">
+    <section class="bg-zinc-100 py-10">
             <div class="max-w-6xl mx-auto flex flex-col items-center gap-5 px-5">
                 <h2 class="text-center">
                     Especialistas em <br>
@@ -18,7 +18,7 @@
                                 <img :src='item.imageURL' width="300" height="200" class="rounded-md object-cover w-full" alt='' />
                                 <h3>{{item.title}}</h3>
                                 <p>{{item.intro}}</p>
-                                <NuxtLink :to="`${item.link}`" class="btn btn-primary">
+                                <NuxtLink :to="`${item.link}`" class="btn btn-primary ">
                                     Ver mais
                                 </NuxtLink>
                     </div>

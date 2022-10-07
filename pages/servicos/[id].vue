@@ -28,7 +28,7 @@ onMounted(() => {
                     <img :src="service.imageURL" alt="" class="w-full rounded-md">
                 </div>
             </div>
-            <div class="bg-zinc-200">
+            <div class="bg-zinc-100">
                 <div class="w-full border-2 border-primary rounded-lg p-5 flex flex-col items-center text-center flex-1 gap-4 shadow-lg">
                     <h1>Fale com um especialista</h1>
                     <p>Que tal agendar agora mesmo um bate papo com o nosso time?</p>
