@@ -1,3 +1,12 @@
+<script lang="ts">
+import VueScrollTo from 'vue-scrollto'
+onMounted(() => {
+    VueScrollTo.scrollTo('#__nuxt', 300, {
+        offset: 0,
+    })
+})
+</script>
+
 <template>
   <div class="flex flex-col">
     <header class="sticky top-0 border-b-2 border-b-primary shadow-lg bg-base-100 z-30">
