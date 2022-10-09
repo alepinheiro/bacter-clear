@@ -1,11 +1,3 @@
-<script lang="ts">
-import VueScrollTo from 'vue-scrollto'
-onMounted(() => {
-    VueScrollTo.scrollTo('#__nuxt', 300, {
-        offset: 0,
-    })
-})
-</script>
 
 <template>
   <div class="flex flex-col">
