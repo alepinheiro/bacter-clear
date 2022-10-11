@@ -22,7 +22,11 @@
                   Serviços
                 </NuxtLink>
               </li>
-              <li><a>Sobre Nós</a></li>
+              <li>
+                <NuxtLink to="/sobre-nos/">
+                  Sobre Nós
+                </NuxtLink>
+              </li>
               <li><a>Contato</a></li>
 
             </ul>
@@ -35,7 +39,11 @@
                 Serviços
               </NuxtLink>
             </li>
-            <li><a>Sobre Nós</a></li>
+            <li>
+                <NuxtLink to="/sobre-nos/">
+                  Sobre Nós
+                </NuxtLink>
+              </li>
             <li><a>Contato</a></li>
             <li><a>🔎 47 99999-9999</a></li>
           </ul>

@@ -1,17 +1,20 @@
 <script setup lang="ts">
+
 import VueScrollTo from 'vue-scrollto'
+
 const route = useRoute()
-console.log(route.path)
+const services = useServices()
+
 if (route.path === '/servicos') {
     await navigateTo({ path: '/servicos/' })
 }
-const services = useServices()
 
 onMounted(() => {
     VueScrollTo.scrollTo('#__nuxt', 300, {
         offset: 0,
     })
 })
+
 </script>
 <template>
     <section class="bg-zinc-100 py-10">

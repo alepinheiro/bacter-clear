@@ -35,35 +35,7 @@ onMounted(() => {
                 </div>
             </div>
 
-            <!-- form -->
-            <div class="bg-zinc-100 md:w-3/4 mx-auto">
-                <div
-                    class="w-full border-2 border-primary rounded-lg p-5 flex flex-col items-center text-center flex-1 gap-4 shadow-lg">
-                    <h1>Fale com um especialista</h1>
-                    <p>Que tal agendar agora mesmo um bate papo com o nosso time?</p>
-                    <form class="w-full flex flex-col gap-2">
-
-                        <label class="input-group">
-                            <span class="w-32">Nome</span>
-                            <input type="text" placeholder="Digite seu nome"
-                                class="input input-bordered flex-1 w-full" />
-                        </label>
-                        <label class="input-group">
-                            <span class="w-32">Email</span>
-                            <input type="text" placeholder="Digite seu email"
-                                class="input input-bordered flex-1 w-full" />
-                        </label>
-                        <label class="input-group">
-                            <span class="w-32">Telefone</span>
-                            <input type="text" placeholder="Digite seu telefone"
-                                class="input input-bordered flex-1 w-full" />
-                        </label>
-                        <button class="btn btn-primary">
-                            Solicitar contato
-                        </button>
-                    </form>
-                </div>
-            </div>
+            <ContactForm />
         </div>
 
     </section>
