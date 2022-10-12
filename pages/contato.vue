@@ -1,3 +1,21 @@
+<script setup>
+useHead({
+    title: 'Contato',
+})
+
+const formData = ref({
+    name: '',
+    email: '',
+    phone: '',
+    interest: '' || null,
+})
+
+function sendToWhats() {
+    const text = `Olá, me chamo *${formData.value.name}* e gostaria de falar sobre *${formData.value.interest}*
+    - meus dados para contato são: Telefone: *${formData.value.phone}* | e-mail: *${formData.value.email}*`
+    window.open(encodeURI(`https://wa.me/5548988654105?text=${text}`))
+}
+</script>
 <template>
     <div class="max-w-6xl flex md:flex-row flex-col w-full mx-auto py-10 gap-10">
         <div class="flex flex-col gap-5 flex-1 w-full px-5 justify-between ">
@@ -12,33 +30,33 @@
 
                     <label class="input-group">
                         <span class="w-32">Nome</span>
-                        <input type="text" placeholder="Digite seu nome" class="input input-bordered flex-1 w-full" />
+                        <input v-model="formData.name" type="text" placeholder="Digite seu nome" class="input input-bordered flex-1 w-full" />
                     </label>
                     <label class="input-group">
                         <span class="w-32">Email</span>
-                        <input type="text" placeholder="Digite seu email" class="input input-bordered flex-1 w-full" />
+                        <input v-model="formData.email" type="text" placeholder="Digite seu email" class="input input-bordered flex-1 w-full" />
                     </label>
                     <label class="input-group">
                         <span class="w-32">Telefone</span>
-                        <input type="text" placeholder="Digite seu telefone"
+                        <input v-model="formData.phone" type="text" placeholder="Digite seu telefone"
                             class="input input-bordered flex-1 w-full" />
                     </label>
                     <label class="input-group">
                         <span class="w-32">Interesse</span>
-                        <select type="text" placeholder="Digite seu telefone"
+                        <select v-model="formData.interest" type="text" placeholder="Digite seu telefone"
                             class="input input-bordered flex-1 w-full">
-                            <option disabled selected>Selecione o interesse</option>
-                            <option>Detetização</option>
-                            <option>DetetizaçãoControle Integrado de Pragas (CIP)</option>
-                            <option>Desratização</option>
-                            <option>Descupinização</option>
-                            <option>Manejo de pombos e morcegos</option>
-                            <option>Limpeza de caixa d’água</option>
-                            <option>Conserto de persianas</option>
-                            <option>Telas para insetos</option>
+                            <option disabled selected value="null">Selecione o interesse</option>
+                            <option value="Detetização">Detetização</option>
+                            <option value="Controle Integrado de Pragas (CIP)">Controle Integrado de Pragas (CIP)</option>
+                            <option value="Desratização">Desratização</option>
+                            <option value="Descupinização">Descupinização</option>
+                            <option value="Manejo de pombos e morcegos">Manejo de pombos e morcegos</option>
+                            <option value="Limpeza de caixa d’água">Limpeza de caixa d’água</option>
+                            <option value="Conserto de persianas">Conserto de persianas</option>
+                            <option value="Telas para insetos">Telas para insetos</option>
                         </select>
                     </label>
-                    <button class="btn btn-primary">
+                    <button @click.prevent="sendToWhats" class="btn btn-primary">
                         Solicitar contato
                     </button>
                 </form>

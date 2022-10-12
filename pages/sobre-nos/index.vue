@@ -7,6 +7,10 @@ import VueScrollTo from 'vue-scrollto'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
+useHead({
+    title: 'Sobre nós',
+})
+
 function scrollTo(id: string) {
     VueScrollTo.scrollTo(id, 300, {
         offset: -100,

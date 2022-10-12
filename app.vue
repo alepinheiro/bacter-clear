@@ -1,4 +1,11 @@
 
+<script setup>
+useHead({
+  titleTemplate: (titleChunk) => {
+    return titleChunk ? `${titleChunk} - BacterClear` : 'BacterClear - Especialistas em controle de pragas e desinfecção';
+  }
+})
+</script>
 <template>
   <div class="flex flex-col">
     <header class="sticky top-0 border-b-2 border-b-primary shadow-lg bg-base-100 z-30">
@@ -67,7 +74,7 @@
           <div class="text-center flex flex-col items-center gap-2 flex-1">
             <p>Contato:</p>
             <p>Orçamentos - Whatsapp:</p>
-            <p>48 (48) 98865-4105</p>
+            <p>(48) 98865-4105</p>
             <p>Orçamentos - email:</p>
             <p>bacterclear@gmail.com</p>
 

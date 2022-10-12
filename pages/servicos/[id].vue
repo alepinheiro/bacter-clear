@@ -6,6 +6,10 @@ const route = useRoute()
 
 const service = services.find(el => el.link == route.params.id)
 
+useHead({
+    title: service.title,
+})
+
 onMounted(() => {
     VueScrollTo.scrollTo('#__nuxt', 300, {
         offset: 0,

@@ -9,6 +9,10 @@ if (route.path === '/servicos') {
     await navigateTo({ path: '/servicos/' })
 }
 
+useHead({
+    title: 'Serviços',
+})
+
 onMounted(() => {
     VueScrollTo.scrollTo('#__nuxt', 300, {
         offset: 0,
