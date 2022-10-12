@@ -27,7 +27,11 @@
                   Sobre Nós
                 </NuxtLink>
               </li>
-              <li><a>Contato</a></li>
+              <li>
+                <NuxtLink to="/contato/">
+                  Contato
+                </NuxtLink>
+              </li>
 
             </ul>
           </div>
@@ -40,12 +44,16 @@
               </NuxtLink>
             </li>
             <li>
-                <NuxtLink to="/sobre-nos/">
-                  Sobre Nós
-                </NuxtLink>
-              </li>
-            <li><a>Contato</a></li>
-            <li><a>🔎 47 99999-9999</a></li>
+              <NuxtLink to="/sobre-nos/">
+                Sobre Nós
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="/contato/">
+                Contato
+              </NuxtLink>
+            </li>
+            <li><a>🔎 (48) 98865-4105</a></li>
           </ul>
         </div>
 
@@ -53,25 +61,37 @@
     </header>
     <NuxtPage />
     <footer class="bg-slate-900 py-10">
-      <div class="w-full max-w-4xl flex flex-col text-white mx-auto gap-10">
+      <div class="w-full max-w-4xl flex flex-col text-white mx-auto gap-10 ite">
         <div class="w-2/3 mx-auto flex flex-col md:flex-row  gap-10 items-center">
+
           <div class="text-center flex flex-col items-center gap-2 flex-1">
             <p>Contato:</p>
             <p>Orçamentos - Whatsapp:</p>
-            <p>48 9999-9999</p>
+            <p>48 (48) 98865-4105</p>
             <p>Orçamentos - email:</p>
             <p>bacterclear@gmail.com</p>
-            <p>SIGA NOSSAS REDES</p>
-            <div class="flex flex-row">
-              <p>🔎</p>
-              <p>🔎</p>
-              <p>🔎</p>
-            </div>
+
           </div>
-          <div class="flex flex-col gap-4 flex-1">
-            <button class="btn">Serviços</button>
-            <button class="btn">Sobre nós</button>
-            <button class="btn">Contato</button>
+
+          <div class="flex flex-col gap-4 flex-1 items-center">
+            <NuxtLink to="/servicos/">
+              Serviços
+            </NuxtLink>
+            <NuxtLink to="/sobre-nos/">
+              Sobre Nós
+            </NuxtLink>
+            <NuxtLink to="/contato/">
+              Contato
+            </NuxtLink>
+          </div>
+
+        </div>
+        <div class="flex-flex-col mx-auto items-center gap-4">
+          <p class="text-center">SIGA NOSSAS REDES</p>
+          <div class="flex flex-row items-center gap-5">
+            <p>🔎bacterclearoficial</p>
+            <p>🔎bacterclearoficial</p>
+            <p>🔎bacterclearoficial</p>
           </div>
         </div>
         <div class="flex flex-col md:flex-row gap-2 text-xs text-center mx-auto">
