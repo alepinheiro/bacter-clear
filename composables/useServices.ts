@@ -9,7 +9,7 @@ export function useServices () {
         title: 'Controle Integrado de Pragas (CIP)',
         imageURL: '/controle-integrado-de-pragas.png',
         intro: 'É uma seleção de métodos de controle e o desenvolvimento de critérios que garantam resultados favoráveis sob o ponto de vista higiênico, ecológico e econômico.',
-        fullText: 'Este sistema visa impedir que animais se instalem e gerem danos significativos, além de diminuir a quantidade de pesticidas, o que favorece o meio ambiente e diminui consideravelmente os custos dispensados com os defensivos, por exemplo.<br>Para que o controle seja realmente eficaz, é necessário conhecer bem os hábitos das espécies a serem combatidas. Assim, é essencial obter informações como o ciclo de vida, habilidades, alimentação e reprodução das espécies, e, a partir de tais informações as providências serão realizadas.<br>Algumas dessas ações, como a remoção ou a limitação de fontes de alimento, água e abrigos, são baseadas em fatores de controle. Se este manejo for combinado com ações de combate direto às espécies – com produtos químicos –, o resultado será o mais positivo possível, podendo erradicar a espécie.',
+        fullText: 'É uma ação que elimina e impede e proliferação de animais em ambientes.<br>Para que o controle seja realmente eficaz, é necessário conhecer bem os hábitos das espécies a serem combatidas. Assim, é essencial obter informações como o ciclo de vida, habilidades, alimentação e reprodução das espécies, e, a partir de tais informações as providências serão realizadas.<br>Algumas dessas ações, como a remoção ou a limitação de fontes de alimento, água e abrigos, são baseadas em fatores de controle. Se este manejo for combinado com ações de combate direto às espécies – com produtos químicos –, o resultado será o mais positivo possível, podendo erradicar a espécie.',
         link: 'controle-integrado-de-pragas'
     },{
         title: 'Desratização',
@@ -37,7 +37,7 @@ export function useServices () {
         link: 'limpeza-de-caixa-de-agua'
     },{
         title: 'Conserto de persianas',
-        imageURL: '/conserto-de-persianas.jpg',
+        imageURL: '/conserto-de-persianas.jpeg',
         intro: 'Consertamos persianas externas e esquadrias em alumínio, assim como, adaptações e substituições, limpando suas caixas, muitas vezes contaminadas e alojadas por morcegos.',
         fullText: 'Consertamos persianas externas e esquadrias em alumínio, assim como, adaptações e substituições, limpando suas caixas, muitas vezes contaminadas e alojadas por morcegos.',
         link: 'conserto-de-persianas'

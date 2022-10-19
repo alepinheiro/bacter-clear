@@ -1,9 +1,13 @@
 
 <script setup>
+import { Icon } from '@iconify/vue'
 useHead({
   titleTemplate: (titleChunk) => {
     return titleChunk ? `${titleChunk} - BacterClear` : 'BacterClear - Especialistas em controle de pragas e desinfecção';
-  }
+  },
+  script: [
+  { hid: 'google-tag-manager', src: '/gtm.js', type: 'text/javascript', async: true }
+  ]
 })
 </script>
 <template>
@@ -11,8 +15,8 @@ useHead({
     <header class="sticky top-0 border-b-2 border-b-primary shadow-lg bg-base-100 z-30">
       <div class="navbar justify-between max-w-6xl mx-auto ">
         <div class="navbar-start">
-          <NuxtLink to="/" class="btn btn-ghost normal-case text-xl">
-            <img src="/logo-bacter-clear.png" alt="" srcset="">
+          <NuxtLink to="/" class="normal-case text-xl w-48">
+            <img src="/logo-bacter-clear.png" alt="" class="object-cover w-full" srcset="">
           </NuxtLink>
         </div>
         <div class="navbar-center md:hidden">
@@ -60,7 +64,13 @@ useHead({
                 Contato
               </NuxtLink>
             </li>
-            <li><a>🔎 (48) 98865-4105</a></li>
+            <li><a href="https://wa.me/5548988654105">
+                <div>
+                  <Icon icon="akar-icons:whatsapp-fill" />
+                </div>
+                (48) 98865-4105
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -93,12 +103,27 @@ useHead({
           </div>
 
         </div>
-        <div class="flex-flex-col mx-auto items-center gap-4">
+        <div class="flex flex-col mx-auto items-center gap-4">
           <p class="text-center">SIGA NOSSAS REDES</p>
-          <div class="flex flex-row items-center gap-5">
-            <p>🔎bacterclearoficial</p>
-            <p>🔎bacterclearoficial</p>
-            <p>🔎bacterclearoficial</p>
+          <div class="flex md:flex-row flex-col items-center gap-5">
+            <a href="https://instagram.com/bacterclearoficial" class="flex flex-row gap-2 items-center">
+              <div >
+                <Icon icon="akar-icons:instagram-fill" />
+              </div>
+              <p>bacterclearoficial</p>
+            </a>
+            <a href="https://facebook.com/bacterclearoficial" class="flex flex-row gap-2 items-center">
+              <div>
+                <Icon icon="akar-icons:facebook-fill" />
+              </div>
+            <p>bacterclearoficial</p>
+            </a>
+            <a href="https://youtube.com/bacterclearoficial" class="flex flex-row gap-2 items-center">
+            <div>
+                <Icon icon="ant-design:youtube-outlined" />
+              </div>
+            <p>bacterclearoficial</p>
+            </a>
           </div>
         </div>
         <div class="flex flex-col md:flex-row gap-2 text-xs text-center mx-auto">

@@ -5,10 +5,8 @@
                     <img src="/logo-bacter-clear.png" alt="">
                     <h2>Entre em contato</h2>
                     <h3>Especialistas em segurança biológica</h3>
-                    <p>Nosso método permite a desinfecção de ambientes de forma rápida, limpa e segura.
-                        <br>
-                        Utilizamos a técnica de <b>névoa seca,</b> uma tecnologia que higieniza todos os cantos do ambiente, isso tudo com um produto atóxico e que
-                        <b>garantimos a desinfecção por mais de 21 dias.</b></p>
+                    <p>Se você tem dúvidas, deseja receber uma proposta e quer saber mais sobre a BacterClear ou sobre os produtos
+                        que utilizamos ou os serviços que prestamos, entre em contato conosco através do formulário, você será redirecionado para o WhatsApp.</p>
                 </div>
                 <div id="contato"
                     class="w-full border-2 border-primary rounded-lg p-5 flex flex-col items-center text-center flex-1 gap-4 shadow-lg">
