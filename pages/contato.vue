@@ -1,6 +1,6 @@
 <script setup>
 import VueScrollTo from 'vue-scrollto'
-
+const route = useRoute()
 useHead({
     title: 'Contato',
 })
