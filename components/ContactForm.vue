@@ -41,17 +41,17 @@ function sendToWhats() {
 
                         <label class="input-group">
                             <span class="w-32">Nome</span>
-                            <input v-model="formData.name" type="text" placeholder="Digite seu nome"
+                            <input v-model="formData.name" type="text" id="name" name="name" placeholder="Digite seu nome"
                                 class="input input-bordered flex-1 w-full" />
                         </label>
                         <label class="input-group">
                             <span class="w-32">Email</span>
-                            <input v-model="formData.email" type="text" placeholder="Digite seu email"
+                            <input v-model="formData.email" type="email" placeholder="Digite seu email" id="email" name="email"
                                 class="input input-bordered flex-1 w-full" />
                         </label>
                         <label class="input-group">
                             <span class="w-32">Telefone</span>
-                            <input v-model="formData.phone" type="text" placeholder="Digite seu telefone"
+                            <input v-model="formData.phone" type="phone" placeholder="Digite seu telefone" id="phone" name="phone"
                                 class="input input-bordered flex-1 w-full" />
                         </label>
                         <button @click.prevent="sendToWhats" class="btn btn-primary">

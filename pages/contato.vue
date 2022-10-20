@@ -53,15 +53,18 @@ onMounted(() => {
 
                     <label class="input-group">
                         <span class="w-32">Nome</span>
-                        <input v-model="formData.name" type="text" placeholder="Digite seu nome" class="input input-bordered flex-1 w-full" />
+                        <input v-model="formData.name" type="text" id="name" name="name"
+                        placeholder="Digite seu nome" class="input input-bordered flex-1 w-full" />
                     </label>
                     <label class="input-group">
                         <span class="w-32">Email</span>
-                        <input v-model="formData.email" type="text" placeholder="Digite seu email" class="input input-bordered flex-1 w-full" />
+                        <input v-model="formData.email" type="email" id="email" name="email"
+                        placeholder="Digite seu email" class="input input-bordered flex-1 w-full" />
                     </label>
                     <label class="input-group">
                         <span class="w-32">Telefone</span>
-                        <input v-model="formData.phone" type="text" placeholder="Digite seu telefone"
+                        <input v-model="formData.phone" type="phone" id="phone" name="phone"
+                        placeholder="Digite seu telefone"
                             class="input input-bordered flex-1 w-full" />
                     </label>
                     <label class="input-group">
