@@ -1,4 +1,6 @@
 <script setup>
+import VueScrollTo from 'vue-scrollto'
+
 useHead({
     title: 'Contato',
 })
@@ -11,10 +13,31 @@ const formData = ref({
 })
 
 function sendToWhats() {
-    const text = `Olá, me chamo *${formData.value.name}* e gostaria de falar sobre *${formData.value.interest}*
+    if (process.client){
+        window.dataLayer.push({
+            event: 'Conversion',
+            pagePath: route.fullPath,
+            pageTitle: route.name
+        });
+        const text = `Olá, me chamo *${formData.value.name}* e gostaria de falar sobre *${formData.value.interest}*
     - meus dados para contato são: Telefone: *${formData.value.phone}* | e-mail: *${formData.value.email}*`
     window.open(encodeURI(`https://wa.me/5548988654105?text=${text}`))
+    }
+
 }
+
+onMounted(() => {
+    if (process.client){
+        window.dataLayer.push({
+            event: 'Pageview',
+            pagePath: route.fullPath,
+            pageTitle: route.name
+        });
+    }
+    VueScrollTo.scrollTo('#__nuxt', 300, {
+        offset: 0,
+    })
+})
 </script>
 <template>
     <div class="max-w-6xl flex md:flex-row flex-col w-full mx-auto py-10 gap-10">

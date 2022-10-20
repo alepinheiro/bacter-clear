@@ -8,14 +8,28 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 
 const services = useServices()
+const route = useRoute()
 
 function scrollTo(id: string) {
+
+    if (process.client){
+        window.dataLayer.push({event: 'gtm.click'})
+    }
+
     VueScrollTo.scrollTo(id , 300, {
         offset: -100,
     })
 }
 
 onMounted(() => {
+
+    if (process.client){
+        window.dataLayer.push({
+            event: 'Pageview',
+            pagePath: route.fullPath,
+            pageTitle: route.name
+        });
+    }
     VueScrollTo.scrollTo('#__nuxt', 300, {
         offset: 0,
     })

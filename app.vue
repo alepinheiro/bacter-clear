@@ -1,17 +1,23 @@
 
 <script setup>
 import { Icon } from '@iconify/vue'
+const GOOGLE_TM_ID = 'GTM-WC2Z8J2'
 useHead({
   titleTemplate: (titleChunk) => {
     return titleChunk ? `${titleChunk} - BacterClear` : 'BacterClear - Especialistas em controle de pragas e desinfecção';
   },
-  script: [
-  { hid: 'google-tag-manager', src: '/gtm.js', type: 'text/javascript', async: true }
-  ]
+
 })
+
 </script>
 <template>
   <div class="flex flex-col">
+    <ClientOnly>
+      <component is="noscript">
+        <iframe :src="`https://www.googletagmanager.com/ns.html?id=${GOOGLE_TM_ID}`" height="0" width="0"
+          style="display: none; visibility: hidden"></iframe>
+      </component>
+    </ClientOnly>
     <header class="sticky top-0 border-b-2 border-b-primary shadow-lg bg-base-100 z-30">
       <div class="navbar justify-between max-w-6xl mx-auto ">
         <div class="navbar-start">
@@ -107,7 +113,7 @@ useHead({
           <p class="text-center">SIGA NOSSAS REDES</p>
           <div class="flex md:flex-row flex-col items-center gap-5">
             <a href="https://instagram.com/bacterclearoficial" class="flex flex-row gap-2 items-center">
-              <div >
+              <div>
                 <Icon icon="akar-icons:instagram-fill" />
               </div>
               <p>bacterclearoficial</p>
@@ -116,13 +122,13 @@ useHead({
               <div>
                 <Icon icon="akar-icons:facebook-fill" />
               </div>
-            <p>bacterclearoficial</p>
+              <p>bacterclearoficial</p>
             </a>
             <a href="https://youtube.com/bacterclearoficial" class="flex flex-row gap-2 items-center">
-            <div>
+              <div>
                 <Icon icon="ant-design:youtube-outlined" />
               </div>
-            <p>bacterclearoficial</p>
+              <p>bacterclearoficial</p>
             </a>
           </div>
         </div>

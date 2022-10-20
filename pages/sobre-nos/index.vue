@@ -18,6 +18,13 @@ function scrollTo(id: string) {
 }
 
 onMounted(() => {
+    if (process.client){
+        window.dataLayer.push({
+            event: 'Pageview',
+            pagePath: route.fullPath,
+            pageTitle: route.name
+        });
+    }
     VueScrollTo.scrollTo('#__nuxt', 300, {
         offset: 0,
     })
@@ -26,7 +33,7 @@ onMounted(() => {
 
 <template>
     <div class="flex flex-col gap-10">
-        <section class="max-w-6xl mx-auto">
+        <section class="max-w-6xl mx-auto w-full">
 
             <div class="flex flex-col-reverse md:flex-row py-10 gap-5 px-5">
 

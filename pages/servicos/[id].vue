@@ -11,6 +11,13 @@ useHead({
 })
 
 onMounted(() => {
+    if (process.client){
+        window.dataLayer.push({
+            event: 'Pageview',
+            pagePath: route.fullPath,
+            pageTitle: route.name
+        });
+    }
     VueScrollTo.scrollTo('#__nuxt', 300, {
         offset: 0,
     })

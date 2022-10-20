@@ -1,3 +1,28 @@
+<script setup>
+const route = useRoute()
+const formData = ref({
+    name: '',
+    email: '',
+    phone: '',
+    interest: '' || null,
+})
+
+function sendToWhats() {
+    if (process.client){
+        window.dataLayer.push({
+            event: 'Conversion',
+            pagePath: route.fullPath,
+            pageTitle: route.name
+        });
+        const text = `Olá, me chamo *${formData.value.name}*, estou no seu site e gostaria de falar sobre seus serviços
+        - meus dados para contato são: Telefone: *${formData.value.phone}* | e-mail: *${formData.value.email}*`
+        window.open(encodeURI(`https://wa.me/5548988654105?text=${text}`))
+    }
+
+}
+
+</script>
+
 <template>
     <section class="max-w-4xl mx-auto py-10 px-5" >
             <div class="flex md:flex-row flex-col w-full gap-10 justify-center items-center">
@@ -16,20 +41,20 @@
 
                         <label class="input-group">
                             <span class="w-32">Nome</span>
-                            <input type="text" placeholder="Digite seu nome"
+                            <input v-model="formData.name" type="text" placeholder="Digite seu nome"
                                 class="input input-bordered flex-1 w-full" />
                         </label>
                         <label class="input-group">
                             <span class="w-32">Email</span>
-                            <input type="text" placeholder="Digite seu email"
+                            <input v-model="formData.email" type="text" placeholder="Digite seu email"
                                 class="input input-bordered flex-1 w-full" />
                         </label>
                         <label class="input-group">
                             <span class="w-32">Telefone</span>
-                            <input type="text" placeholder="Digite seu telefone"
+                            <input v-model="formData.phone" type="text" placeholder="Digite seu telefone"
                                 class="input input-bordered flex-1 w-full" />
                         </label>
-                        <button class="btn btn-primary">
+                        <button @click.prevent="sendToWhats" class="btn btn-primary">
                             Solicitar contato
                         </button>
                     </form>
