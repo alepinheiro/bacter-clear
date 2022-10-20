@@ -7,6 +7,8 @@ import VueScrollTo from 'vue-scrollto'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
+const route = useRoute()
+
 useHead({
     title: 'Sobre nós',
 })
@@ -19,7 +21,7 @@ function scrollTo(id: string) {
 
 onMounted(() => {
     if (process.client){
-        window.dataLayer.push({
+        (window as any).dataLayer.push({
             event: 'Pageview',
             pagePath: route.fullPath,
             pageTitle: route.name

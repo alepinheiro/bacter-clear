@@ -13,7 +13,7 @@ const route = useRoute()
 function scrollTo(id: string) {
 
     if (process.client){
-        window.dataLayer.push({event: 'gtm.click'})
+        (window as any).dataLayer.push({event: 'gtm.click'})
     }
 
     VueScrollTo.scrollTo(id , 300, {
@@ -24,7 +24,7 @@ function scrollTo(id: string) {
 onMounted(() => {
 
     if (process.client){
-        window.dataLayer.push({
+        (window as any).dataLayer.push({
             event: 'Pageview',
             pagePath: route.fullPath,
             pageTitle: route.name

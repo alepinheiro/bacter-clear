@@ -15,7 +15,7 @@ useHead({
 
 onMounted(() => {
     if (process.client){
-        window.dataLayer.push({
+        (window as any).dataLayer.push({
             event: 'Pageview',
             pagePath: route.fullPath,
             pageTitle: route.name

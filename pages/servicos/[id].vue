@@ -7,12 +7,12 @@ const route = useRoute()
 const service = services.find(el => el.link == route.params.id)
 
 useHead({
-    title: service.title,
+    title: service.title
 })
 
 onMounted(() => {
     if (process.client){
-        window.dataLayer.push({
+        (window as any).dataLayer.push({
             event: 'Pageview',
             pagePath: route.fullPath,
             pageTitle: route.name

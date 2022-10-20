@@ -12,8 +12,10 @@ const formData = ref({
     interest: '' || null,
 })
 
-function sendToWhats() {
-    if (process.client){
+const successMessage = ref('')
+
+async function sendToWhats() {
+    if (process.client) {
         window.dataLayer.push({
             event: 'Conversion',
             pagePath: route.fullPath,
@@ -21,13 +23,19 @@ function sendToWhats() {
         });
         const text = `Olá, me chamo *${formData.value.name}* e gostaria de falar sobre *${formData.value.interest}*
     - meus dados para contato são: Telefone: *${formData.value.phone}* | e-mail: *${formData.value.email}*`
-    window.open(encodeURI(`https://wa.me/5548988654105?text=${text}`))
+        window.open(encodeURI(`https://wa.me/5548988654105?text=${text}`))
+        await useFetch('https://en22p2mwpsrjwj.x.pipedream.net/', {
+            method: 'POST',
+            body: formData.value,
+            key: new Date().toString()
+        })
+        successMessage.value = 'Mensagem enviada com sucesso!'
     }
 
 }
 
 onMounted(() => {
-    if (process.client){
+    if (process.client) {
         window.dataLayer.push({
             event: 'Pageview',
             pagePath: route.fullPath,
@@ -48,24 +56,33 @@ onMounted(() => {
                 ou sobre os produtos que utilizamos ou os serviços que prestamos, entre em
                 contato conosco através do formulário, você será redirecionado para o WhatsApp.
             </p>
-            <div>
+            <div class="flex flex-col gap-5">
+                <div v-if="successMessage" class="alert alert-success shadow-lg">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span>{{successMessage}}</span>
+                    </div>
+                </div>
                 <form class="w-full flex flex-col gap-2">
 
                     <label class="input-group">
                         <span class="w-32">Nome</span>
-                        <input v-model="formData.name" type="text" id="name" name="name"
-                        placeholder="Digite seu nome" class="input input-bordered flex-1 w-full" />
+                        <input v-model="formData.name" type="text" id="name" name="name" placeholder="Digite seu nome"
+                            class="input input-bordered flex-1 w-full" />
                     </label>
                     <label class="input-group">
                         <span class="w-32">Email</span>
                         <input v-model="formData.email" type="email" id="email" name="email"
-                        placeholder="Digite seu email" class="input input-bordered flex-1 w-full" />
+                            placeholder="Digite seu email" class="input input-bordered flex-1 w-full" />
                     </label>
                     <label class="input-group">
                         <span class="w-32">Telefone</span>
                         <input v-model="formData.phone" type="phone" id="phone" name="phone"
-                        placeholder="Digite seu telefone"
-                            class="input input-bordered flex-1 w-full" />
+                            placeholder="Digite seu telefone" class="input input-bordered flex-1 w-full" />
                     </label>
                     <label class="input-group">
                         <span class="w-32">Interesse</span>
@@ -73,7 +90,8 @@ onMounted(() => {
                             class="input input-bordered flex-1 w-full">
                             <option disabled selected value="null">Selecione o interesse</option>
                             <option value="Detetização">Detetização</option>
-                            <option value="Controle Integrado de Pragas (CIP)">Controle Integrado de Pragas (CIP)</option>
+                            <option value="Controle Integrado de Pragas (CIP)">Controle Integrado de Pragas (CIP)
+                            </option>
                             <option value="Desratização">Desratização</option>
                             <option value="Descupinização">Descupinização</option>
                             <option value="Manejo de pombos e morcegos">Manejo de pombos e morcegos</option>
