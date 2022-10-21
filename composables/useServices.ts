@@ -12,6 +12,12 @@ export function useServices () {
         fullText: 'É uma ação que elimina e impede e proliferação de animais em ambientes.<br>Para que o controle seja realmente eficaz, é necessário conhecer bem os hábitos das espécies a serem combatidas. Assim, é essencial obter informações como o ciclo de vida, habilidades, alimentação e reprodução das espécies, e, a partir de tais informações as providências serão realizadas.<br>Algumas dessas ações, como a remoção ou a limitação de fontes de alimento, água e abrigos, são baseadas em fatores de controle. Se este manejo for combinado com ações de combate direto às espécies – com produtos químicos –, o resultado será o mais positivo possível, podendo erradicar a espécie.',
         link: 'controle-integrado-de-pragas'
     },{
+        title: 'Desinfecção por névoa',
+        imageURL: '/desinfeccao-por-nevoa.jpg',
+        intro: 'Esse equipamento é desenvolvido para desinfecção de ambientes, através do processo de Névoa Seca, transformando a solução desinfetante em micro partículas que aderem ao local onde foi aplicado, sem deixar nenhum tipo de humidade no local de aplicação. ',
+        fullText: 'Nosso diluente (fluido utilizado para o sistema termo difusor) é especialmente desenvolvido para manter a estabilidade dos produtos a serem utilizados no sistema, gerando assim uma névoa densa, seca e de fácil dispersão, atingindo rapidamente todas as áreas e equipamentos colocados em exposição ao sistema. Utilizamos Quartec 100 como nosso princípio ativo, esse desinfetante a base de Quartenário de Amônio possui eficácia comprovada contra microrganismos, além de possuir laudos de corrosividade, estabilidade e eficácia em diluição para uso em vaporização',
+        link: 'desinfeccao-por-nevoa'
+    },{
         title: 'Desratização',
         imageURL: '/desratizacao.jpg',
         intro: 'Os Ratos são uma das principais pragas urbanas presentes nas grandes cidades, sendo vetor de doenças graves como hantavírus e leptospirose.',
