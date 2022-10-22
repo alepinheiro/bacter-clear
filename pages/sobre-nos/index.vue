@@ -45,7 +45,7 @@ onMounted(() => {
                         <h1>sobre a Bacter Clear</h1>
                     </div>
                     <p>
-                        A Bacter clear foi fundada em XXXX e está instalada na cidade de Floriianópolis/SC.
+                        A Bacter clear foi fundada em 2004 e está instalada na cidade de Florianópolis/SC.
                         Atuando no mercado catarinense, na região da Grande Florianópolis, busca sempre soluções
                         inovadoras
                         para oferecer atendimento rápido, profissional e personalizado para sua residência e/ou ambiente
