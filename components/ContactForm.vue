@@ -8,13 +8,20 @@ const formData = ref({
 })
 
 const successMessage = ref('')
+const errorMessage = ref('')
 
 async function sendToWhats() {
-    if (process.client) {
+
+    let validName = formData.value.name.length > 5
+    let validPhone = formData.value.phone.length > 10 // 47 99949-3409
+    let validEmail = formData.value.email.length > 6 && formData.value.email.includes('@')
+
+    if (validName && validPhone && validEmail){
         window.dataLayer.push({
             event: 'Conversion',
             pagePath: route.fullPath,
-            pageTitle: route.name
+            pageTitle: route.name,
+            'send_to': 'AW-11003766313/Cu4lCP7tmIAYEKnMgP8o',
         });
         const text = `Olá, me chamo *${formData.value.name}*, estou no seu site e gostaria de falar sobre seus serviços
         - meus dados para contato são: Telefone: *${formData.value.phone}* | e-mail: *${formData.value.email}*`
@@ -25,6 +32,9 @@ async function sendToWhats() {
             key: new Date().toString()
         })
         successMessage.value = 'Mensagem enviada com sucesso!'
+
+    } else {
+        errorMessage.value = 'Você deve preencher todos os campos para continuar.'
     }
 
 }
@@ -59,7 +69,14 @@ async function sendToWhats() {
                     </div>
                 </div>
 
-                <form class="w-full flex flex-col gap-2">
+                <div v-if="errorMessage" class="alert alert-error shadow-lg">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span>{{errorMessage}}</span>
+                    </div>
+                </div>
+
+                <form @submit.prevent="sendToWhats" class="w-full flex flex-col gap-2">
 
                     <label class="input-group">
                         <span class="w-32">Nome</span>
@@ -76,7 +93,7 @@ async function sendToWhats() {
                         <input v-model="formData.phone" type="phone" placeholder="Digite seu telefone" id="phone"
                             name="phone" class="input input-bordered flex-1 w-full" />
                     </label>
-                    <button @click.prevent="sendToWhats" class="btn btn-primary">
+                    <button  class="btn btn-primary">
                         Solicitar contato
                     </button>
                 </form>

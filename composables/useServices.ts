@@ -14,8 +14,8 @@ export function useServices () {
     },{
         title: 'Desinfecção por névoa',
         imageURL: '/desinfeccao-por-nevoa.jpg',
-        intro: 'Esse equipamento é desenvolvido para desinfecção de ambientes, através do processo de Névoa Seca, transformando a solução desinfetante em micro partículas que aderem ao local onde foi aplicado, sem deixar nenhum tipo de humidade no local de aplicação. ',
-        fullText: 'Nosso diluente (fluido utilizado para o sistema termo difusor) é especialmente desenvolvido para manter a estabilidade dos produtos a serem utilizados no sistema, gerando assim uma névoa densa, seca e de fácil dispersão, atingindo rapidamente todas as áreas e equipamentos colocados em exposição ao sistema. Utilizamos Quartec 100 como nosso princípio ativo, esse desinfetante a base de Quartenário de Amônio possui eficácia comprovada contra microrganismos, além de possuir laudos de corrosividade, estabilidade e eficácia em diluição para uso em vaporização',
+        intro: 'Esse equipamento é desenvolvido para sanitização de ambientes, através do processo de Névoa Seca, transformando a solução desinfetante em micro partículas que aderem ao local onde foi aplicado, sem deixar nenhum tipo de humidade no local de aplicação. ',
+        fullText: 'Nosso diluente (fluido utilizado para o sistema termo difusor) é especialmente desenvolvido para manter a estabilidade dos produtos a serem utilizados na sanitização, gerando assim uma névoa densa, seca e de fácil dispersão, atingindo rapidamente todas as áreas e equipamentos colocados em exposição ao sistema. Utilizamos Quartec 100 como nosso princípio ativo, esse desinfetante a base de Quartenário de Amônio possui eficácia comprovada contra microrganismos, além de possuir laudos de corrosividade, estabilidade e eficácia em diluição para uso em vaporização',
         link: 'desinfeccao-por-nevoa'
     },{
         title: 'Desratização',
@@ -33,7 +33,10 @@ export function useServices () {
         title: 'Manejo de pombos e morcegos',
         imageURL: '/manejo-de-pombos-e-morcegos.jpg',
         intro: 'Diferente de insetos e outros animais nocivos, estas espécies não podem ser maltratadas, envenenadas e mortas. Isso é considerado crime ambiental pelo Ibama.',
-        fullText: 'As aves urbanas transmitem doenças, causam danos diversos, entre outros incômodos, por isso é preciso ter cuidado com eles. Tendo em vista que o Manejo de Pombos deve ser feito em conformidade com as regras ambientais, a BacterClear oferece um serviço totalmente adequado às normas para que a sua segurança não seja prejudicada por tais aves.<br>Além do remanejamento, é preciso também realizar a higienização do espaço, já que o local fica cheio de excrementos das aves. Essas sujeiras são altamente tóxicas e podem originar transmissão de doenças como a criptococose, entre outras, que podem ser trágicas para as pessoas.',
+        fullText: 'A remoção de pombos e morcegos no perímetro urbano é importante por vários motivos. Em primeiro lugar, esses animais podem causar danos a edifícios e estruturas, como fachadas de prédios, telhados e calhas. Eles também podem contaminar alimentos e água com suas fezes, o que pode causar doenças em seres humanos e animais domésticos.<br><br>' +
+        ' Além disso, a presença excessiva de pombos e morcegos em áreas urbanas pode causar problemas de limpeza e manutenção, já que suas fezes podem sujar calçadas e outras superfícies. Isso pode prejudicar a aparência e a higiene das cidades, o que pode afetar a qualidade de vida das pessoas que vivem nessas áreas. <br><br>' +
+        ' Por fim, o controle de pombos e morcegos no perímetro urbano também proteger esses animais. Eles podem sofrer com a falta de alimentos e abrigo em ambientes urbanos, o que pode afetar sua saúde e bem-estar. A remoção de pombos e morcegos deve ser realizada de forma humanitária, de acordo com as leis e regulamentações. <br><br>' +
+        ' Em resumo, a remoção de pombos e morcegos no perímetro urbano é importante para proteger a saúde das pessoas, a integridade das estruturas e a higiene das cidades, além de proteger os próprios animais.',
         link: 'manejo-de-pombos-e-morcegos'
     },{
         title: 'Limpeza de caixa d’água',
