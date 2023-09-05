@@ -1,5 +1,5 @@
 import prisma from "@/server/database";
-import { ContactForms } from "../../prisma/generated/client";
+import { ContactForms } from "@prisma/client";
 
 export default defineEventHandler(async (event) => {
   try {
