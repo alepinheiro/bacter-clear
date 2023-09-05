@@ -30,7 +30,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     apiSecret: {
-      MONGODB_URI: process.env.MONGODB_URI,
+      MONGODB_URI: process.env.DB_URL,
     },
   },
   typescript: {
