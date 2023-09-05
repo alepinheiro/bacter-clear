@@ -1,0 +1,135 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/client"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("MONGODB_URI")
+}
+
+// atualizar em logMessage
+type Tags {
+  superAdmin  Boolean @default(true)
+  notifyStart Boolean @default(false)
+  user        Boolean @default(true)
+  admin       Boolean @default(false)
+  blocked     Boolean @default(false)
+  autoSticker Boolean @default(false)
+  newsletter  Boolean @default(false)
+  autoMessage Int     @default(0)
+}
+
+type Counters {
+  obrigado Int? @default(0)
+  teAmo    Int? @default(0)
+  fodaSe   Int? @default(0)
+  isqueiro Int? @default(0)
+  gay      Int? @default(0)
+}
+
+model Jailsinho {
+  createdAt             DateTime @default(now())
+  counters              Counters
+  dateTimeUptime        DateTime
+  id                    Int      @id @map("_id")
+  maintenanceMode       Boolean
+  maxServerUptime       String?
+  popularCommands       Json?
+  totalChats            Int
+  totalCommandsExecuted Int
+  totalMessagesReceived Int
+  updatedAt             DateTime @updatedAt
+}
+
+model PrivateChats {
+  createdAt             DateTime @default(now())
+  id                    String   @id @default(auto()) @map("_id") @db.ObjectId
+  chatId                String   @unique
+  isGroup               Boolean
+  isReadOnly            Boolean
+  name                  String
+  popularCommands       Json?
+  timestamp             Int
+  totalCommandsExecuted Int
+  totalMessagesReceived Int
+  tags                  Tags
+  updatedAt             DateTime @updatedAt
+}
+
+model GroupChats {
+  blockedUsers          String[]
+  commandsPerMember     Json?
+  createdAt             DateTime @default(now())
+  description           String
+  groupId               String   @unique
+  id                    String   @id @default(auto()) @map("_id") @db.ObjectId
+  isGroup               Boolean
+  isReadOnly            Boolean
+  maxParticipants       Int
+  messagesPerMember     Json?
+  mutedWords            String[]
+  name                  String
+  popularCommands       Json?
+  tags                  Tags
+  timestamp             Int
+  totalCommandsExecuted Int
+  totalMembers          Int
+  totalMessagesReceived Int
+  updatedAt             DateTime @updatedAt
+  welcomeMessage        String   @default(" oi vida ❤️")
+}
+
+model GroupList {
+  id              String                @id @default(auto()) @map("_id") @db.ObjectId
+  groupId         String                @unique
+  timer           Int                   @default(0)
+  lastAutoMessage DateTime
+  subscribers     GroupListSubscriber[]
+}
+
+type GroupListSubscriber {
+  number    String
+  name      String
+  createdAt DateTime @default(now())
+}
+
+model VoteBanPoll {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  groupId   String @unique
+  defendant String?
+  description String?
+  maxVotes   Int?
+  maxTime    Int? @default(60)// tempo em minutos
+  pool VoteBanVotes[]
+  createdAt DateTime @default(now())
+}
+
+type VoteBanVotes {
+  voteType Boolean?
+  voter String
+}
+
+model ContactForms {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  owner String @unique
+  sendTo SendTo
+  contacts ContactFormsToSent[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+type ContactFormsToSent {
+  name String
+  phone String
+  email String
+  interest String
+  hasSent Boolean @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime
+}
+
+type SendTo {
+  name String
+  chatId String
+}
