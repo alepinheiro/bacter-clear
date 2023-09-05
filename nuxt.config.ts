@@ -25,6 +25,14 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  nitro: {
+    preset: 'vercel'
+  },
+  runtimeConfig: {
+    apiSecret: {
+      MONGODB_URI: process.env.MONGODB_URI,
+    },
+  },
   typescript: {
     tsConfig: {
       compilerOptions: {
@@ -33,12 +41,6 @@ export default defineNuxtConfig({
       },
     },
   },
-  runtimeConfig: {
-    apiSecret: {
-      MONGODB_URI: process.env.MONGODB_URI,
-    },
-  },
-  nitro: {
-    preset: 'vercel'
-  }
+
+
 });
