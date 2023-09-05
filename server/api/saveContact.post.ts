@@ -3,7 +3,6 @@ import { ContactForms } from "@/prisma/generated/client/edge";
 
 export default defineEventHandler(async (event) => {
   try {
-    const db = prisma.contactForms;
     const body: ContactForms["contacts"][0] = await readBody(event);
     if (!body) {
       throw createError({
@@ -11,7 +10,7 @@ export default defineEventHandler(async (event) => {
         message: "Item field is required.",
       });
     }
-    await db.upsert({
+    await prisma.contactForms.upsert({
       where: {
         owner: "bacterClear",
       },
