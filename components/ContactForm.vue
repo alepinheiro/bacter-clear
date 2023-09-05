@@ -26,7 +26,7 @@ async function sendToWhats() {
         const text = `Olá, me chamo *${formData.value.name}*, estou no seu site e gostaria de falar sobre seus serviços
         - meus dados para contato são: Telefone: *${formData.value.phone}* | e-mail: *${formData.value.email}*`
         window.open(encodeURI(`https://wa.me/5548988654105?text=${text}`))
-        await useFetch('https://en22p2mwpsrjwj.x.pipedream.net/', {
+        await useFetch('https://eoxg63q0sv13tyw.m.pipedream.net', {
             method: 'POST',
             body: formData.value,
             key: new Date().toString()
