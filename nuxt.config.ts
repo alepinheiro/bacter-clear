@@ -38,4 +38,7 @@ export default defineNuxtConfig({
       MONGODB_URI: process.env.MONGODB_URI,
     },
   },
+  nitro: {
+    preset: 'vercel-edge'
+  }
 });
