@@ -2,28 +2,30 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --dotenv .env.local",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^5.3.3",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.3",
-    "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.7",
-    "autoprefixer": "^10.4.12",
+    "autoprefixer": "^10.4.15",
     "nuxt": "^3.7.0",
-    "postcss": "^8.4.17",
+    "postcss": "^8.4.29",
+    "prisma": "^5.2.0",
     "swiper": "^8.4.2",
     "tailwindcss": "^3.1.8",
     "typescript": "^4.8.4"
   },
   "dependencies": {
     "@iconify/vue": "^4.0.0",
+    "@prisma/client": "^5.2.0",
     "daisyui": "^2.31.0",
+    "mongoose": "^7.5.0",
     "sass": "^1.55.0",
+    "vercel": "^32.1.0",
     "vue-scrollto": "^2.20.0"
   }
 }

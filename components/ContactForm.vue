@@ -17,6 +17,18 @@ async function sendToWhats() {
     let validEmail = formData.value.email.length > 6 && formData.value.email.includes('@')
 
     if (validName && validPhone && validEmail){
+        await useFetch('/api/saveContact',{
+            method: 'POST',
+            body: {
+                name: formData.value.name,
+                phone: formData.value.phone,
+                email: formData.value.email,
+                interest: formData.value.interest,
+                hasSent: false,
+                createdAt: new Date(),
+                updatedAt: new Date(),
+            }
+        })
         window.dataLayer.push({
             event: 'Conversion',
             pagePath: route.fullPath,
