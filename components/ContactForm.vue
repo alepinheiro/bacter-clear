@@ -128,9 +128,9 @@ async function submitForm() {
     await useFetch("/api/saveContact", {
       method: "POST",
       body: {
-        name: formData.value.name,
-        phone: formData.value.phone,
-        email: formData.value.email,
+        name: formData.value.name.data,
+        phone: formData.value.phone.data,
+        email: formData.value.email.data,
         interest: "Não especificado" || route.fullPath,
         hasSent: false,
         createdAt: new Date(),
@@ -143,8 +143,8 @@ async function submitForm() {
       pageTitle: route.name,
       send_to: env.public.GA4,
     });
-    const text = `Olá, me chamo *${formData.value.name}*, estou no seu site e gostaria de falar sobre seus serviços
-        - meus dados para contato são: Telefone: *${formData.value.phone}* | e-mail: *${formData.value.email}*`;
+    const text = `Olá, me chamo *${formData.value.name.data}*, estou no seu site e gostaria de falar sobre seus serviços
+        - meus dados para contato são: Telefone: *${formData.value.phone.data}* | e-mail: *${formData.value.email.data}*`;
     window.open(encodeURI(`https://wa.me/5548988654105?text=${text}`));
     await useFetch("https://eoxg63q0sv13tyw.m.pipedream.net", {
       method: "POST",
