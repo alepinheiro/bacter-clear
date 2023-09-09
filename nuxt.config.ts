@@ -29,6 +29,9 @@ export default defineNuxtConfig({
     preset: 'vercel'
   },
   runtimeConfig: {
+    public: {
+      GA4: "AW-11003766313/Cu4lCP7tmIAYEKnMgP8o"
+    },
     apiSecret: {
       MONGODB_URI: process.env.DB_URL,
     },

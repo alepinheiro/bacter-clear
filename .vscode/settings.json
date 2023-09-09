@@ -2,5 +2,8 @@
     "nuxt.isNuxtApp": false,
     "cSpell.words": [
         "daisyui"
-    ]
+    ],
+    "css.customData": [".vscode/tailwind.json"],
+    "scss.lint.unknownAtRules": "ignore",
+    "typescript.tsdk": "node_modules/typescript/lib"
 }
