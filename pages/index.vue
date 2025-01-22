@@ -11,7 +11,7 @@ const services = useServices();
 const route = useRoute();
 
 function scrollTo(id: string) {
-  if (process.client) {
+  if (import.meta.client) {
     (window as any).dataLayer.push({ event: "gtm.click" });
   }
 
@@ -21,7 +21,7 @@ function scrollTo(id: string) {
 }
 
 onMounted(() => {
-  if (process.client) {
+  if (import.meta.client) {
     (window as any).dataLayer.push({
       event: "Pageview",
       pagePath: route.fullPath,
@@ -38,41 +38,42 @@ onMounted(() => {
   <div>
     <section class="block w-full shadow-lg">
       <div class="relative h-full">
-        <div class="flex-1 z-0">
+        <div class="flex-1 z-0 h-96">
           <ClientOnly>
             <Swiper
               :slides-per-view="1"
               :centered-slides="true"
               :auto-height="false"
-              :autoplay="(true as any)"
+              :autoplay="true"
               :modules="[Autoplay]"
             >
-              <SwiperSlide>
-                <img
-                  src="/slide-01.jpg"
+              <SwiperSlide
+                v-for="(item, index) in [
+                  '/slide-01.jpg',
+                  '/slide-02.jpg',
+                  '/slide-03.jpeg',
+                ]"
+                :key="item"
+              >
+                <NuxtImg
+                  :src="item"
                   width="600"
+                  placeholder
                   height="400"
+                  format="webp"
+                  :alt="'Slide ' + (index + 1)"
                   class="w-full object-cover h-96"
-                  alt=""
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  src="/slide-02.jpg"
-                  width="600"
-                  height="400"
-                  class="w-full object-cover h-96"
-                  alt=""
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  src="/slide-03.jpeg"
-                  width="600"
-                  height="400"
-                  class="w-full object-cover h-96"
-                  alt=""
-                />
+                  v-slot="{ src, imgAttrs }"
+                  :loading="index === 0 ? 'eager' : 'lazy'"
+                  :sizes="'(max-width: 600px) 100vw, 600px'"
+                  :fetchpriority="index === 0 ? 'high' : 'low'"
+                >
+                  <img
+                    :src="src"
+                    v-bind="imgAttrs"
+                    :fetchpriority="index === 0 ? 'high' : 'low'"
+                  />
+                </NuxtImg>
               </SwiperSlide>
             </Swiper>
           </ClientOnly>
@@ -120,17 +121,19 @@ onMounted(() => {
                   spaceBetween: 40,
                 },
               }"
-              :autoplay="{
-                          delay: 5000,
-                        } as any"
+              :autoplay="
+                {
+                  delay: 5000,
+                } as any
+              "
               :modules="[Autoplay, Pagination]"
-              :pagination="{ clickable: true, } as any"
+              :pagination="{ clickable: true } as any"
             >
               <SwiperSlide
                 v-for="item in services"
                 class="bg-white rounded-xl shadow-slate-300 shadow-lg overflow-clip p-5 flex flex-col gap-4 text-center flex-grow justify-between"
               >
-                <img
+                <NuxtImg
                   :src="item.imageURL"
                   class="rounded-md object-cover w-full h-52"
                   :alt="`Serviço de ${item.title}`"

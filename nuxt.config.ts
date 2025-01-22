@@ -19,15 +19,18 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
+
   nitro: {
     preset: 'vercel'
   },
+
   runtimeConfig: {
     public: {
       GA4: "AW-11003766313/Cu4lCP7tmIAYEKnMgP8o"
@@ -36,6 +39,7 @@ export default defineNuxtConfig({
       MONGODB_URI: process.env.DB_URL,
     },
   },
+
   typescript: {
     tsConfig: {
       compilerOptions: {
@@ -45,5 +49,6 @@ export default defineNuxtConfig({
     },
   },
 
-
+  modules: ['@nuxt/image'],
+  compatibilityDate: '2025-01-21',
 });

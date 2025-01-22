@@ -37,13 +37,13 @@
               :modules="[Autoplay]"
             >
               <SwiperSlide>
-                <img src="/slide-01.jpg" class="object-cover h-full" alt="" />
+                <NuxtImg  src="/slide-01.jpg" class="object-cover h-full" alt="" />
               </SwiperSlide>
               <SwiperSlide>
-                <img src="/slide-02.jpg" class="object-cover h-full" alt="" />
+                <NuxtImg  src="/slide-02.jpg" class="object-cover h-full" alt="" />
               </SwiperSlide>
               <SwiperSlide>
-                <img src="/slide-03.jpeg" class="object-cover h-full" alt="" />
+                <NuxtImg  src="/slide-03.jpeg" class="object-cover h-full" alt="" />
               </SwiperSlide>
             </Swiper>
           </ClientOnly>

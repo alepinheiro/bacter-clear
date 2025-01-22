@@ -11,7 +11,7 @@
           <p v-html="service.fullText" />
         </div>
         <div class="flex-1 w-full">
-          <img :src="service.imageURL" alt="" class="w-full rounded-md" />
+          <NuxtImg  :src="service.imageURL" alt="" class="w-full rounded-md" />
         </div>
       </div>
 

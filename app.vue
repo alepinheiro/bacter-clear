@@ -16,7 +16,7 @@
       <div class="navbar justify-between max-w-6xl mx-auto">
         <div class="navbar-start">
           <NuxtLink to="/" class="normal-case text-xl w-48">
-            <img
+            <NuxtImg
               src="/logo-bacter-clear.png"
               alt=""
               class="object-cover w-full"

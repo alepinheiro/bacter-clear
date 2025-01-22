@@ -10,7 +10,7 @@
           v-for="item in services"
           class="bg-white rounded-xl shadow-slate-300 shadow-lg overflow-clip p-5 flex flex-col gap-4 text-center flex-grow justify-between"
         >
-          <img
+          <NuxtImg
             :src="item.imageURL"
             class="rounded-md object-cover w-full h-52"
             :alt="`Serviço de ${item.title}`"
