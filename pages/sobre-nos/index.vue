@@ -27,26 +27,28 @@
           </NuxtLink>
         </div>
         <div class="md:w-1/2">
-          <ClientOnly>
-            <Swiper
-              class="md:h-full h-96 w-auto rounded-lg"
-              :slides-per-view="1"
-              :centered-slides="true"
-              :auto-height="false"
-              :autoplay="(true as any)"
-              :modules="[Autoplay]"
-            >
-              <SwiperSlide>
-                <NuxtImg  src="/slide-01.jpg" class="object-cover h-full" alt="" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <NuxtImg  src="/slide-02.jpg" class="object-cover h-full" alt="" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <NuxtImg  src="/slide-03.jpeg" class="object-cover h-full" alt="" />
-              </SwiperSlide>
-            </Swiper>
-          </ClientOnly>
+          <Swiper
+            class="md:h-full h-96 w-auto rounded-lg"
+            :slides-per-view="1"
+            :centered-slides="true"
+            :auto-height="false"
+            :autoplay="true as any"
+            :modules="[Autoplay]"
+          >
+            <SwiperSlide>
+              <NuxtImg src="/slide-01.jpg" class="object-cover h-full" alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <NuxtImg src="/slide-02.jpg" class="object-cover h-full" alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <NuxtImg
+                src="/slide-03.jpeg"
+                class="object-cover h-full"
+                alt=""
+              />
+            </SwiperSlide>
+          </Swiper>
         </div>
       </div>
     </section>

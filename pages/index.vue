@@ -53,39 +53,37 @@ onMounted(() => {
               :sizes="'(max-width: 600px) 100vw, 600px'"
             ></NuxtImg>
           </div>
-          <ClientOnly>
-            <Swiper
-              :slides-per-view="1"
-              :centered-slides="true"
-              :auto-height="false"
-              :autoplay="true"
-              :modules="[Autoplay]"
+          <Swiper
+            :slides-per-view="1"
+            :centered-slides="true"
+            :auto-height="false"
+            :autoplay="true"
+            :modules="[Autoplay]"
+          >
+            <SwiperSlide
+              v-for="(item, index) in [
+                '/slide-01.jpg',
+                '/slide-02.jpg',
+                '/slide-03.jpeg',
+              ]"
+              :key="item"
             >
-              <SwiperSlide
-                v-for="(item, index) in [
-                  '/slide-01.jpg',
-                  '/slide-02.jpg',
-                  '/slide-03.jpeg',
-                ]"
-                :key="item"
+              <NuxtImg
+                :src="item"
+                width="600"
+                placeholder
+                height="400"
+                format="webp"
+                :alt="'Slide ' + (index + 1)"
+                class="w-full object-cover h-96"
+                :loading="index === 0 ? 'eager' : 'lazy'"
+                :sizes="'(max-width: 600px) 100vw, 600px'"
+                :fetchpriority="index === 0 ? 'high' : 'low'"
               >
-                <NuxtImg
-                  :src="item"
-                  width="600"
-                  placeholder
-                  height="400"
-                  format="webp"
-                  :alt="'Slide ' + (index + 1)"
-                  class="w-full object-cover h-96"
-                  :loading="index === 0 ? 'eager' : 'lazy'"
-                  :sizes="'(max-width: 600px) 100vw, 600px'"
-                  :fetchpriority="index === 0 ? 'high' : 'low'"
-                >
-                  />
-                </NuxtImg>
-              </SwiperSlide>
-            </Swiper>
-          </ClientOnly>
+                />
+              </NuxtImg>
+            </SwiperSlide>
+          </Swiper>
         </div>
         <div class="absolute -bottom-40 md:-bottom-10 w-full z-10">
           <div
@@ -112,49 +110,47 @@ onMounted(() => {
           controle de pragas e desinfecção
         </h2>
         <div class="w-full" id="cards">
-          <ClientOnly>
-            <Swiper
-              class="h-full"
-              :space-between="20"
-              :loop="true"
-              :autoheight="false"
-              :breakpoints="{
-                // when window width is >= 480px
-                480: {
-                  slidesPerView: 1,
-                  spaceBetween: 30,
-                },
-                // when window width is >= 640px
-                768: {
-                  slidesPerView: 3,
-                  spaceBetween: 40,
-                },
-              }"
-              :autoplay="
-                {
-                  delay: 5000,
-                } as any
-              "
-              :modules="[Autoplay, Pagination]"
-              :pagination="{ clickable: true } as any"
+          <Swiper
+            class="h-full"
+            :space-between="20"
+            :loop="true"
+            :autoheight="false"
+            :breakpoints="{
+              // when window width is >= 480px
+              480: {
+                slidesPerView: 1,
+                spaceBetween: 30,
+              },
+              // when window width is >= 640px
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+              },
+            }"
+            :autoplay="
+              {
+                delay: 5000,
+              } as any
+            "
+            :modules="[Autoplay, Pagination]"
+            :pagination="{ clickable: true } as any"
+          >
+            <SwiperSlide
+              v-for="item in services"
+              class="bg-white rounded-xl shadow-slate-300 shadow-lg overflow-clip p-5 flex flex-col gap-4 text-center flex-grow justify-between"
             >
-              <SwiperSlide
-                v-for="item in services"
-                class="bg-white rounded-xl shadow-slate-300 shadow-lg overflow-clip p-5 flex flex-col gap-4 text-center flex-grow justify-between"
+              <NuxtImg
+                :src="item.imageURL"
+                class="rounded-md object-cover w-full h-52"
+                :alt="`Serviço de ${item.title}`"
+              />
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.intro }}</p>
+              <NuxtLink :to="`/servicos/${item.link}`" class="btn btn-primary"
+                >Ver mais</NuxtLink
               >
-                <NuxtImg
-                  :src="item.imageURL"
-                  class="rounded-md object-cover w-full h-52"
-                  :alt="`Serviço de ${item.title}`"
-                />
-                <h3>{{ item.title }}</h3>
-                <p>{{ item.intro }}</p>
-                <NuxtLink :to="`/servicos/${item.link}`" class="btn btn-primary"
-                  >Ver mais</NuxtLink
-                >
-              </SwiperSlide>
-            </Swiper>
-          </ClientOnly>
+            </SwiperSlide>
+          </Swiper>
         </div>
       </div>
     </section>
