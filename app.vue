@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col relative">
     <ClientOnly>
       <component is="noscript">
         <iframe
@@ -81,6 +81,7 @@
         </div>
       </div>
     </header>
+    <WhatsAppButton class="fixed bottom-4 right-4 z-10" />
     <NuxtPage />
     <footer class="bg-slate-900 py-10">
       <div class="w-full max-w-4xl flex flex-col text-white mx-auto gap-10 ite">
