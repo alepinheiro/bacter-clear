@@ -155,6 +155,5 @@ useHead({
       ? `${titleChunk} - BacterClear`
       : "BacterClear - Especialistas em controle de pragas e desinfecção";
   },
-  link: slidesPreloadLinks,
 });
 </script>
