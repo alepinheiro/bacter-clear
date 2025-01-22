@@ -148,14 +148,7 @@
 <script setup>
 import { Icon } from "@iconify/vue";
 const GOOGLE_TM_ID = "GTM-WC2Z8J2";
-const slides = ["/slide-01.jpg", "/slide-02.jpg", "/slide-03.jpeg"];
-const slidesPreloadLinks = slides.map((slide) => {
-  return {
-    rel: "preload",
-    href: slide,
-    as: "image",
-  };
-});
+
 useHead({
   titleTemplate: (titleChunk) => {
     return titleChunk
