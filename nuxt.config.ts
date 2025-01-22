@@ -17,6 +17,14 @@ export default defineNuxtConfig({
           async: "false",
         },
       ],
+      link: [
+        // Preload de imagens críticas
+        {
+          rel: "preload",
+          as: "image",
+          href: "/slide-01.jpg",
+        },
+      ],
     },
   },
 
@@ -29,6 +37,12 @@ export default defineNuxtConfig({
 
   nitro: {
     preset: "vercel",
+    compressPublicAssets: true,
+    minify: true,
+    prerender: {
+      crawlLinks: true,
+      routes: ["/"],
+    },
   },
 
   runtimeConfig: {
@@ -51,7 +65,31 @@ export default defineNuxtConfig({
 
   modules: ["@nuxt/image"],
   compatibilityDate: "2025-01-21",
+
   image: {
-    format: ["webp"],
+    provider: "ipx",
+    ipx: {
+      modifiers: {
+        format: "webp",
+        quality: "80",
+      },
+    },
+    presets: {
+      default: {
+        modifiers: {
+          format: "webp",
+          quality: 80,
+          loading: "lazy",
+        },
+      },
+      thumbnail: {
+        modifiers: {
+          format: "webp",
+          width: 100,
+          height: 100,
+          fit: "cover",
+        },
+      },
+    },
   },
 });

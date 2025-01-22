@@ -38,7 +38,21 @@ onMounted(() => {
   <div>
     <section class="block w-full shadow-lg">
       <div class="relative h-full">
-        <div class="flex-1 z-0 h-96">
+        <div class="flex-1 z-0 h-96 relative">
+          <div class="absolute inset-0">
+            <NuxtImg
+              alt="Slide"
+              width="600"
+              placeholder
+              height="400"
+              format="webp"
+              loading="eager"
+              src="/slide-01.jpg"
+              fetchpriority="high"
+              class="w-full object-cover h-96"
+              :sizes="'(max-width: 600px) 100vw, 600px'"
+            ></NuxtImg>
+          </div>
           <ClientOnly>
             <Swiper
               :slides-per-view="1"
@@ -63,15 +77,10 @@ onMounted(() => {
                   format="webp"
                   :alt="'Slide ' + (index + 1)"
                   class="w-full object-cover h-96"
-                  v-slot="{ src, imgAttrs }"
                   :loading="index === 0 ? 'eager' : 'lazy'"
                   :sizes="'(max-width: 600px) 100vw, 600px'"
                   :fetchpriority="index === 0 ? 'high' : 'low'"
                 >
-                  <img
-                    :src="src"
-                    v-bind="imgAttrs"
-                    :fetchpriority="index === 0 ? 'high' : 'low'"
                   />
                 </NuxtImg>
               </SwiperSlide>
