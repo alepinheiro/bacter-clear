@@ -63,7 +63,7 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxt/image"],
+  modules: ["@nuxt/image", "nuxt-booster"],
   compatibilityDate: "2025-01-21",
 
   image: {
@@ -90,6 +90,31 @@ export default defineNuxtConfig({
           fit: "cover",
         },
       },
+    },
+  },
+
+  booster: {
+    detection: {
+      performance: true,
+      browserSupport: true,
+    },
+    performanceMetrics: {
+      device: {
+        hardwareConcurrency: { min: 2, max: 48 },
+        deviceMemory: { min: 2 },
+      },
+      timing: {
+        fcp: 800,
+        dcl: 1200,
+      },
+    },
+    targetFormats: ["webp", "avif", "jpg|jpeg|png|gif"],
+    /**
+     * IntersectionObserver rootMargin for Compoennts and Assets
+     */
+    lazyOffset: {
+      component: "0%",
+      asset: "0%",
     },
   },
 });
