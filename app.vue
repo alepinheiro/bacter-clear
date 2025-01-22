@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col">
-    <!-- <ClientOnly>
+    <ClientOnly>
       <component is="noscript">
         <iframe
           :src="`https://www.googletagmanager.com/ns.html?id=${GOOGLE_TM_ID}`"
@@ -9,7 +9,7 @@
           style="display: none; visibility: hidden"
         ></iframe>
       </component>
-    </ClientOnly> -->
+    </ClientOnly>
     <header
       class="sticky top-0 border-b-2 border-b-primary shadow-lg bg-base-100 z-30"
     >
