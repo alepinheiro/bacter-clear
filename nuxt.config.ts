@@ -28,12 +28,12 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    preset: 'vercel'
+    preset: "vercel",
   },
 
   runtimeConfig: {
     public: {
-      GA4: "AW-11003766313/Cu4lCP7tmIAYEKnMgP8o"
+      GA4: "AW-11003766313/Cu4lCP7tmIAYEKnMgP8o",
     },
     apiSecret: {
       MONGODB_URI: process.env.DB_URL,
@@ -49,6 +49,9 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ['@nuxt/image'],
-  compatibilityDate: '2025-01-21',
+  modules: ["@nuxt/image"],
+  compatibilityDate: "2025-01-21",
+  image: {
+    format: ["webp"],
+  },
 });
