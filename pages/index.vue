@@ -47,7 +47,7 @@ onMounted(() => {
               height="400"
               format="webp"
               loading="eager"
-              src="/slide-01.jpg"
+              src="/webp/slide-01.webp"
               fetchpriority="high"
               class="w-full object-cover h-96"
               :sizes="'(max-width: 600px) 100vw, 600px'"
@@ -62,9 +62,9 @@ onMounted(() => {
           >
             <SwiperSlide
               v-for="(item, index) in [
-                '/slide-01.jpg',
-                '/slide-02.jpg',
-                '/slide-03.jpeg',
+                '/webp/slide-01.webp',
+                '/webp/slide-02.webp',
+                '/webp/slide-03.webp',
               ]"
               :key="item"
             >

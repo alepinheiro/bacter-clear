@@ -17,14 +17,6 @@ export default defineNuxtConfig({
           async: "false",
         },
       ],
-      link: [
-        // Preload de imagens críticas
-        {
-          rel: "preload",
-          as: "image",
-          href: "/slide-01.jpg",
-        },
-      ],
     },
   },
 
